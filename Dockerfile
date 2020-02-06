@@ -5,4 +5,4 @@ WORKDIR /app
 RUN pip3.7 install -r requirements.txt
 COPY . /app
 
-CMD ["python", "/app/google_login/main.py"]
+CMD ["python", "/app/aiohttp_prometheus/main.py"]

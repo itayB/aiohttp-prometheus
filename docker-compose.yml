@@ -17,11 +17,16 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
-  aiohttp:
+  app1:
     build:
       context: .
-    environment:
-      - CLIENT_ID=changeme
-      - CLIENT_SECRET=changeme
+  app2:
+    build:
+      context: .
+  haproxy:
+    build:
+      context: .
+      dockerfile: HAProxyDockerfile
     ports:
       - "80:80"
+
