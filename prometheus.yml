@@ -7,7 +7,7 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-    monitor: 'my-project'
+    monitor: 'aiohttp-prometheus'
 
 # Load and evaluate rules in this file every 'evaluation_interval' seconds.
 # rule_files:
@@ -36,31 +36,30 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
-
-  - job_name: 'cadvisor'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-
-    dns_sd_configs:
-      - names:
-          - 'tasks.cadvisor'
-        type: 'A'
-        port: 8080
-
-  #     static_configs:
-  #          - targets: ['cadvisor:8080']
-
-  - job_name: 'aiohttp'
+  - job_name: 'app1'
 
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
 
     dns_sd_configs:
       - names:
-          - 'tasks.aiohttp'
+          - 'tasks.app1'
         type: 'A'
         port: 8000
 
     static_configs:
-      - targets: ['aiohttp:8000']
+      - targets: ['app1:8000']
+
+  - job_name: 'app2'
+
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 5s
+
+    dns_sd_configs:
+      - names:
+          - 'tasks.app2'
+        type: 'A'
+        port: 8000
+
+    static_configs:
+      - targets: ['app2:8000']

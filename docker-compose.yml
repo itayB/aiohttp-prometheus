@@ -29,4 +29,3 @@ services:
       dockerfile: HAProxyDockerfile
     ports:
       - "80:80"
-
