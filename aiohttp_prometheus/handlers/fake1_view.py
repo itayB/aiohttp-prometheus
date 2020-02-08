@@ -22,7 +22,7 @@ class Fake1View(web.View):
         total = int(self.request.query.get('total', '100'))
         percentage = int(self.request.query.get('percentage', '90'))
         start_time = time.time()
-        num = randrange(total)  # Integer from 0 to 9 inclusive
+        num = randrange(total)  # Integer from 0 to 100 inclusive
         if num < percentage:
             latency = 0.05  # 50 milliseconds
         else:
