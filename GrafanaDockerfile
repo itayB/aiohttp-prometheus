@@ -1,4 +1,4 @@
-FROM grafana/grafana:6.6.0
+FROM grafana/grafana:7.3.4
 ADD config/datasource.yml /etc/grafana/provisioning/datasources/datasource.yml
 ADD config/dashboard.yml /etc/grafana/provisioning/dashboards/dashboard.yml
 ADD config/dashboard.json /etc/grafana/provisioning/dashboards/dashboard.json
